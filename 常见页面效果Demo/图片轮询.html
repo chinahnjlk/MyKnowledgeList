@@ -53,6 +53,7 @@ $(document).ready(function () {
             (new CenterImgPlay()).Start();
         });
         function CenterImgPlay() {
+			this.ulList=$(".pager ul li");
             this.list = $(".imgbox").children(":first").children();//图片ul列表
             this.indexs = [];
             this.length = this.list.length;//图片个数
@@ -109,9 +110,10 @@ $(document).ready(function () {
                 isPagerClick = true;
 
                 clearInterval(handid);					//删除定时器
-
-                var oPager = $(this), 
-					i = parseInt(oPager.text()) - 1;	//这样取数据，是不是取巧了
+				
+				var i=self.ulList.length-self.ulList.index($(this))-1;
+                //var oPager = $(this), 
+				//	i = parseInt(oPager.text()) - 1;	//这样取数据，是不是取巧了
 
                 if (i != pre) {							//额，再次点击当前显示的图片就冻结轮询了，赞
                     index = i - 1;
