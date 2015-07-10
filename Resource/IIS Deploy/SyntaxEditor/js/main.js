@@ -8,7 +8,7 @@
 		$.ajax({
 			url : "jQuery_short.js",
 			cache:false,
-			dataType:'html',
+			dataType:'text',
 			type : 'GET',
 			success : function (content) {
 				getContent(content);
