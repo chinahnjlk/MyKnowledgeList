@@ -55,13 +55,14 @@ result={name:"Jerry",age:21,sex:"Boy"}
   这是将hello方法扩展到之前扩展的Jquery的net命名空间中去。
 
   3. **Jquery的extend方法还有一个重载原型：**
-  	```JavaScript
-       extend(boolean,dest,src1,src2,src3...)
-    ```
+```JavaScript
+ extend(boolean,dest,src1,src2,src3...)
+```
     第一个参数boolean代表是否进行深度拷贝，其余参数和前面介绍的一致，什么叫深层拷贝，我们看一个例子：
 
     ```JavaScript
-    var result=$.extend( true,  {},{ name: "John", location: {city: "Boston",county:"USA"} },{ last: "Resig", location: {state: "MA",county:"China"} } );
+    var result=$.extend( true,  {},{ name: "John",
+    location: {city: "Boston",county:"USA"} },{ last: "Resig", location: {state: "MA",county:"China"} } );
     ```
     我们可以看出src1中嵌套子对象`location:{city:"Boston"}`,src2中也嵌套子对象`location:{state:"MA"}`,第一个深度拷贝参数为`true`，那么合并后的结果就是：
 ```JavaScript
@@ -75,3 +76,5 @@ var result=$.extend( false, {},{ name: "John", location:{city: "Boston",county:"
 ```JavaScript
 result={name:"John",last:"Resig",location:{state:"MA",county:"China"}}
 ```
+
+[Link](http://www.cnblogs.com/RascallySnake/archive/2010/05/07/1729563.html)
