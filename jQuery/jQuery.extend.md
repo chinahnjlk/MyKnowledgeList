@@ -59,18 +59,20 @@ result={name:"Jerry",age:21,sex:"Boy"}
        extend(boolean,dest,src1,src2,src3...)
     ```
     第一个参数boolean代表是否进行深度拷贝，其余参数和前面介绍的一致，什么叫深层拷贝，我们看一个例子：
+
     ```JavaScript
     var result=$.extend( true,  {},{ name: "John", location: {city: "Boston",county:"USA"} },{ last: "Resig", location: {state: "MA",county:"China"} } );
     ```
-    我们可以看出src1中嵌套子对象location:{city:"Boston"},src2中也嵌套子对象location:{state:"MA"},第一个深度拷贝参数为true，那么合并后的结果就是：
+    我们可以看出src1中嵌套子对象`location:{city:"Boston"}`,src2中也嵌套子对象`location:{state:"MA"}`,第一个深度拷贝参数为`true`，那么合并后的结果就是：
+
 	```JavaScript
     result={name:"John",last:"Resig",location:{city:"Boston",state:"MA",county:"China"}}
         ```
-        也就是说它会将src中的嵌套子对象也进行合并，而如果第一个参数boolean为false，我们看看合并的结果是什么，如下：
-        ```JavaScript
+也就是说它会将src中的嵌套子对象也进行合并，而如果第一个参数boolean为false，我们看看合并的结果是什么，如下：
+```JavaScript
     var result=$.extend( false, {},{ name: "John", location:{city: "Boston",county:"USA"} },{ last: "Resig", location: {state: "MA",county:"China"} });
-    ```
-     那么合并后的结果就是:
-	```JavaScript
-    result={name:"John",last:"Resig",location:{state:"MA",county:"China"}}
-        ```
+```
+那么合并后的结果就是:
+```JavaScript
+result={name:"John",last:"Resig",location:{state:"MA",county:"China"}}
+```
