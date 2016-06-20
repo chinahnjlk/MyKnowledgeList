@@ -10,3 +10,6 @@
 
 **！！！**
 - 你可以用，我不负责
+
+> 3分就行，蛤蛤蛤
+![no more less](https://github.com/wipphj/MyKnowledgeList/blob/master/Resource/Images/webwxgetmsgimg.jpg)
