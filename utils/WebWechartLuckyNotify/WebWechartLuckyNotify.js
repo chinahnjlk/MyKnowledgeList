@@ -33,6 +33,9 @@
                 var notification = new Notification ('红包提醒  ', {
                     body: chartRoomName + " 发红包啦~"
                 });
+                setTimeout (function () {
+		    		notification.close ();
+				}, 2000);
             }
         }
         try {
