@@ -28,15 +28,13 @@
     },
         observer = new MutationObserver (callback),
         notify = function (chartRoomName) {
-        if (window.Notification) {
-            if (Notification.permission === 'granted') {
-                var notification = new Notification ('红包提醒  ', {
-                    body: chartRoomName + " 发红包啦~"
-                });
-                setTimeout (function () {
-		    		notification.close ();
-				}, 2000);
-            }
+        if (window.Notification && Notification.permission === 'granted') {
+            var notification = new Notification ('红包提醒  ', {
+                body: chartRoomName + " 发红包啦~"
+            });
+            setTimeout (function () {
+                notification.close ();
+            }, 2000);
         }
         try {
             audio = audio || new Audio ("https://wx.qq.com/zh_CN/htmledition/v2/sound/msg.mp3");
